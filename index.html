@@ -1,12 +1,506 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Directory Listing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QGIS Plugin Repository | GeoAI Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f26;
+            --bg-card: #1e252e;
+            --bg-hover: #252d38;
+            --text-primary: #e7eaed;
+            --text-secondary: #8b949e;
+            --accent-primary: #58a6ff;
+            --accent-secondary: #3fb950;
+            --accent-warning: #d29922;
+            --accent-purple: #a371f7;
+            --border-color: #30363d;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Geometric background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(88, 166, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(163, 113, 247, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(63, 185, 80, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .repo-url {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--accent-primary);
+            transition: all 0.3s ease;
+        }
+
+        .repo-url:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
+        }
+
+        .copy-btn {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+        }
+
+        .instructions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .instructions ol {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .plugins-section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .plugin-count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .plugins-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .plugin-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .plugin-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .plugin-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .plugin-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.version {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent-primary);
+        }
+
+        .badge.category {
+            background: rgba(163, 113, 247, 0.15);
+            color: var(--accent-purple);
+        }
+
+        .badge.experimental {
+            background: rgba(210, 153, 34, 0.15);
+            color: var(--accent-warning);
+        }
+
+        .description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: var(--bg-hover);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 16px rgba(88, 166, 255, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-secondary);
+            background: var(--bg-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .repo-url {
+                flex-direction: column;
+                text-align: center;
+                font-size: 0.85rem;
+            }
+
+            .plugin-header {
+                flex-direction: column;
+            }
+
+            .meta {
+                gap: 1rem;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Directory Listing</h1>
-    <ul>
-<li><strong>.</strong></li><ul><li><a href="./README.md">README.md</a></li><li><a href="./geoai.zip">geoai.zip</a></li><li><a href="./hypercoast.zip">hypercoast.zip</a></li><li><a href="./samgeo.zip">samgeo.zip</a></li></ul>
-    </ul>
+    <header>
+        <div class="logo">🌍</div>
+        <h1>QGIS Plugin Repository</h1>
+        <p class="subtitle">AI-powered geospatial analysis tools for QGIS. Deep learning, hyperspectral analysis, and advanced segmentation.</p>
+        <div class="repo-url">
+            <span>https://qgis.gishub.org/plugins.xml</span>
+            <button class="copy-btn" onclick="copyUrl()">Copy URL</button>
+        </div>
+        <div class="instructions">
+            <h3>📋 How to Add This Repository</h3>
+            <ol>
+                <li>Open QGIS → <strong>Plugins</strong> → <strong>Manage and Install Plugins</strong></li>
+                <li>Go to the <strong>Settings</strong> tab</li>
+                <li>Click <strong>Add...</strong> under "Plugin Repositories"</li>
+                <li>Paste the URL above and click OK</li>
+                <li>Enable <strong>"Show also experimental plugins"</strong></li>
+            </ol>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="plugins-section">
+            <div class="section-header">
+                <h2>📦 Available Plugins</h2>
+                <span class="plugin-count">3 plugins available</span>
+            </div>
+            <div class="plugins-grid">
+                
+        <div class="plugin-card">
+            <div class="plugin-header">
+                <h2>GeoAI</h2>
+                <div class="badges">
+                    <span class="badge version">v0.2.0</span>
+                    <span class="badge category">Analysis</span>
+                    <span class="badge experimental">Experimental</span>
+                </div>
+            </div>
+            <p class="description">GeoAI plugin for QGIS providing AI-powered geospatial analysis including Moondream vision-language model for image captioning, querying, object detection, and semantic segmentation model training and inference.</p>
+            <div class="tags"><span class="tag">ai</span><span class="tag">deep learning</span><span class="tag">segmentation</span><span class="tag">object detection</span><span class="tag">moondream</span></div>
+            <div class="meta">
+                <span>👤 Qiusheng Wu</span>
+                <span>📦 62.3 KB</span>
+                <span>🔧 QGIS 3.28+</span>
+                <span>📅 2025-12-14</span>
+            </div>
+            <div class="actions">
+                <a href="geoai.zip" class="btn btn-primary">⬇️ Download</a>
+                <a href="https://opengeoai.org" class="btn btn-secondary" target="_blank">🏠 Homepage</a>
+                <a href="https://github.com/opengeos/geoai" class="btn btn-secondary" target="_blank">📂 Repository</a>
+                <a href="https://github.com/opengeos/geoai/issues" class="btn btn-secondary" target="_blank">🐛 Issues</a>
+            </div>
+        </div>
+        
+        <div class="plugin-card">
+            <div class="plugin-header">
+                <h2>HyperCoast</h2>
+                <div class="badges">
+                    <span class="badge version">v0.2.0</span>
+                    <span class="badge category">Raster</span>
+                    <span class="badge experimental">Experimental</span>
+                </div>
+            </div>
+            <p class="description">Visualize and analyze hyperspectral data including EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, and Wyvern datasets</p>
+            <div class="tags"><span class="tag">hyperspectral</span><span class="tag">remote sensing</span><span class="tag">EMIT</span><span class="tag">PACE</span><span class="tag">spectral</span></div>
+            <div class="meta">
+                <span>👤 Qiusheng Wu</span>
+                <span>📦 40.0 KB</span>
+                <span>🔧 QGIS 3.22+</span>
+                <span>📅 2025-12-14</span>
+            </div>
+            <div class="actions">
+                <a href="hypercoast.zip" class="btn btn-primary">⬇️ Download</a>
+                <a href="https://hypercoast.org" class="btn btn-secondary" target="_blank">🏠 Homepage</a>
+                <a href="https://github.com/opengeos/HyperCoast" class="btn btn-secondary" target="_blank">📂 Repository</a>
+                <a href="https://github.com/opengeos/HyperCoast/issues" class="btn btn-secondary" target="_blank">🐛 Issues</a>
+            </div>
+        </div>
+        
+        <div class="plugin-card">
+            <div class="plugin-header">
+                <h2>SamGeo</h2>
+                <div class="badges">
+                    <span class="badge version">v1.1.0</span>
+                    <span class="badge category">Raster</span>
+                    <span class="badge experimental">Experimental</span>
+                </div>
+            </div>
+            <p class="description">Segment remote sensing images using SAM (Segment Anything Model) with text, point, and box prompts.</p>
+            <div class="tags"><span class="tag">segmentation</span><span class="tag">sam</span><span class="tag">deep learning</span><span class="tag">remote sensing</span><span class="tag">geospatial</span></div>
+            <div class="meta">
+                <span>👤 Qiusheng Wu</span>
+                <span>📦 40.2 KB</span>
+                <span>🔧 QGIS 3.22+</span>
+                <span>📅 2025-12-14</span>
+            </div>
+            <div class="actions">
+                <a href="samgeo.zip" class="btn btn-primary">⬇️ Download</a>
+                <a href="https://github.com/opengeos/qgis-samgeo-plugin" class="btn btn-secondary" target="_blank">🏠 Homepage</a>
+                <a href="https://github.com/opengeos/qgis-samgeo-plugin" class="btn btn-secondary" target="_blank">📂 Repository</a>
+                <a href="https://github.com/opengeos/qgis-samgeo-plugin/issues" class="btn btn-secondary" target="_blank">🐛 Issues</a>
+            </div>
+        </div>
+        
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Made with ❤️ by <a href="https://github.com/giswqs" target="_blank">Qiusheng Wu</a> |
+            <a href="https://github.com/opengeos" target="_blank">Open Geospatial Solutions</a>
+        </p>
+    </footer>
+
+    <script>
+        function copyUrl() {
+            navigator.clipboard.writeText('https://qgis.gishub.org/plugins.xml');
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.style.background = '#3fb950';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
