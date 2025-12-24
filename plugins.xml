@@ -25,7 +25,7 @@ Requires the geoai-py Python package and PyTorch with CUDA support for optimal p
         <version>0.3.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://opengeoai.org</homepage>
-        <file_name>plugins/geoai.zip</file_name>
+        <file_name>geoai.zip</file_name>
         <icon>icons/icon.png</icon>
         <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/geoai.zip</download_url>
@@ -50,7 +50,7 @@ Requires the geoai-py Python package and PyTorch with CUDA support for optimal p
         <version>0.2.0</version>
         <qgis_minimum_version>3.22</qgis_minimum_version>
         <homepage>https://hypercoast.org</homepage>
-        <file_name>plugins/hypercoast.zip</file_name>
+        <file_name>hypercoast.zip</file_name>
         <icon>icons/hypercoast.png</icon>
         <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/hypercoast.zip</download_url>
@@ -78,7 +78,7 @@ Use this template as a starting point for your own QGIS plugins.</about>
         <version>0.1.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-plugin-template</homepage>
-        <file_name>plugins/plugin_template.zip</file_name>
+        <file_name>plugin_template.zip</file_name>
         <icon>icons/icon.svg</icon>
         <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/plugin_template.zip</download_url>
@@ -103,7 +103,7 @@ Features include:
         <version>1.1.0</version>
         <qgis_minimum_version>3.22</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-samgeo-plugin</homepage>
-        <file_name>plugins/samgeo.zip</file_name>
+        <file_name>samgeo.zip</file_name>
         <icon>icons/icon.png</icon>
         <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/samgeo.zip</download_url>

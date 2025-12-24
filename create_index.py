@@ -568,7 +568,8 @@ def generate_plugins_xml(output_file: str = "plugins.xml"):
                 zip_path = os.path.join(plugins_path, filename)
                 metadata = parse_metadata(zip_path)
                 if metadata:
-                    metadata["zip_filename"] = f"{PLUGINS_DIR}/{filename}"
+                    metadata["zip_filename"] = filename  # Just the filename for file_name tag
+                    metadata["zip_path"] = f"{PLUGINS_DIR}/{filename}"  # Full path for download_url
                     plugins_data.append(metadata)
 
     # Generate XML content
@@ -594,8 +595,9 @@ def generate_plugins_xml(output_file: str = "plugins.xml"):
         tags = p.get("tags", "")
         category = p.get("category", "Plugins")
         icon = p.get("icon", "icons/icon.png")
-        zip_filename = p["zip_filename"]
-        download_url = f"https://qgis.gishub.org/{zip_filename}"
+        zip_filename = p["zip_filename"]  # Just the filename
+        zip_path = p["zip_path"]  # Full path for download URL
+        download_url = f"https://qgis.gishub.org/{zip_path}"
 
         xml_content += f"""    <pyqgis_plugin name="{name}" version="{version}">
         <description>{description}</description>
