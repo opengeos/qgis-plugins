@@ -7,6 +7,9 @@ from zipfile import ZipFile
 from datetime import datetime
 
 
+PLUGINS_DIR = "plugins"
+
+
 def parse_metadata(zip_path: str) -> dict:
     """Extract metadata from a QGIS plugin zip file."""
     metadata = {}
@@ -40,18 +43,22 @@ def get_file_size(path: str) -> str:
 def generate_index_html(output_file: str = "index.html"):
     """Generate a modern HTML homepage for the plugin repository."""
 
-    # Find all plugin zip files
+    # Find all plugin zip files in the plugins directory
     plugins = []
-    for filename in sorted(os.listdir(".")):
-        if filename.endswith(".zip"):
-            metadata = parse_metadata(filename)
-            if metadata:
-                metadata["filename"] = filename
-                metadata["filesize"] = get_file_size(filename)
-                metadata["modified"] = datetime.fromtimestamp(
-                    os.path.getmtime(filename)
-                ).strftime("%Y-%m-%d")
-                plugins.append(metadata)
+    plugins_path = PLUGINS_DIR
+    if os.path.isdir(plugins_path):
+        for filename in sorted(os.listdir(plugins_path)):
+            if filename.endswith(".zip"):
+                zip_path = os.path.join(plugins_path, filename)
+                metadata = parse_metadata(zip_path)
+                if metadata:
+                    # Store relative path from root for download links
+                    metadata["filename"] = f"{PLUGINS_DIR}/{filename}"
+                    metadata["filesize"] = get_file_size(zip_path)
+                    metadata["modified"] = datetime.fromtimestamp(
+                        os.path.getmtime(zip_path)
+                    ).strftime("%Y-%m-%d")
+                    plugins.append(metadata)
 
     # Generate plugin cards HTML
     plugin_cards = ""
@@ -548,5 +555,77 @@ def generate_index_html(output_file: str = "index.html"):
     print(f"✅ Generated {output_file} with {len(plugins)} plugins")
 
 
+def generate_plugins_xml(output_file: str = "plugins.xml"):
+    """Generate plugins.xml for QGIS plugin repository."""
+
+    # Find all plugin zip files in the plugins directory
+    plugins_path = PLUGINS_DIR
+    plugins_data = []
+
+    if os.path.isdir(plugins_path):
+        for filename in sorted(os.listdir(plugins_path)):
+            if filename.endswith(".zip"):
+                zip_path = os.path.join(plugins_path, filename)
+                metadata = parse_metadata(zip_path)
+                if metadata:
+                    metadata["zip_filename"] = f"{PLUGINS_DIR}/{filename}"
+                    plugins_data.append(metadata)
+
+    # Generate XML content
+    xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n<plugins>\n'
+
+    for p in plugins_data:
+        name = p.get("name", "Unknown")
+        version = p.get("version", "0.0.1")
+        description = p.get("description", "No description available.")
+        about = (
+            p.get("about", description)
+            .replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+        )
+        qgis_min = p.get("qgisminimumversion", "3.22")
+        homepage = p.get("homepage", "")
+        author = p.get("author", "Unknown")
+        tracker = p.get("tracker", "")
+        repository = p.get("repository", "")
+        experimental = p.get("experimental", "False")
+        deprecated = p.get("deprecated", "False")
+        tags = p.get("tags", "")
+        category = p.get("category", "Plugins")
+        icon = p.get("icon", "icons/icon.png")
+        zip_filename = p["zip_filename"]
+        download_url = f"https://qgis.gishub.org/{zip_filename}"
+
+        xml_content += f"""    <pyqgis_plugin name="{name}" version="{version}">
+        <description>{description}</description>
+        <about>{about}</about>
+        <version>{version}</version>
+        <qgis_minimum_version>{qgis_min}</qgis_minimum_version>
+        <homepage>{homepage}</homepage>
+        <file_name>{zip_filename}</file_name>
+        <icon>{icon}</icon>
+        <author_name>{author}</author_name>
+        <download_url>{download_url}</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>{experimental}</experimental>
+        <deprecated>{deprecated}</deprecated>
+        <tracker>{tracker}</tracker>
+        <repository>{repository}</repository>
+        <tags>{tags}</tags>
+        <category>{category}</category>
+    </pyqgis_plugin>
+
+"""
+
+    xml_content += "</plugins>\n"
+
+    with open(output_file, "w") as f:
+        f.write(xml_content)
+
+    print(f"✅ Generated {output_file} with {len(plugins_data)} plugins")
+
+
 if __name__ == "__main__":
+    generate_plugins_xml()
     generate_index_html()

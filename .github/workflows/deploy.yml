@@ -26,12 +26,14 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       #####################################################
-      # Comment out this section if you don't need to generate the index.html file
-      - name: execute python script
+      # Generate plugins.xml and index.html from plugin zip files
+      - name: Generate plugins.xml and index.html
         run: |
           python create_index.py
       - name: file_check
-        run: ls -l -a
+        run: |
+          ls -l -a
+          ls -l plugins/
       - name: commit files
         continue-on-error: true
         run: |
@@ -39,7 +41,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "Updated index.html ${today} UTC" -a
+          git commit -m "Updated plugins.xml and index.html ${today} UTC" -a
           git pull origin main
       - name: push changes
         continue-on-error: true
