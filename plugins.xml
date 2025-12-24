@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugins>
-    <pyqgis_plugin name="GeoAI" version="0.2.0">
+    <pyqgis_plugin name="GeoAI" version="0.3.0">
         <description>GeoAI plugin for QGIS providing AI-powered geospatial analysis including Moondream vision-language model for image captioning, querying, object detection, and semantic segmentation model training and inference.</description>
         <about>This plugin provides AI-powered geospatial analysis tools:
 
-    Moondream Vision-Language Model:
-    - Caption: Generate descriptions of geospatial imagery
-    - Query: Ask questions about images using natural language
-    - Detect: Detect and locate objects with bounding boxes
-    - Point: Locate specific objects with point markers
+Moondream Vision-Language Model:
+- Caption: Generate descriptions of geospatial imagery
+- Query: Ask questions about images using natural language
+- Detect: Detect and locate objects with bounding boxes
+- Point: Locate specific objects with point markers
 
-    Semantic Segmentation:
-    - Train custom segmentation models (U-Net, DeepLabV3+, FPN, etc.)
-    - Run inference on raster imagery
-    - Export results as vector or raster data
+Semantic Segmentation:
+- Train custom segmentation models (U-Net, DeepLabV3+, FPN, etc.)
+- Run inference on raster imagery
+- Export results as vector or raster data
 
-    SamGeo segmentation:
-    - Segment objects using text prompts (e.g., "tree", "building", "road")
-    - Segment using point prompts (foreground/background) or box prompts drawn on the map
-    - Process multiple points interactively or from vector files/layers
-    - Save results as raster (GeoTIFF) or vector (GeoPackage, Shapefile) with optional regularization
+SamGeo segmentation:
+- Segment objects using text prompts (e.g., "tree", "building", "road")
+- Segment using point prompts (foreground/background) or box prompts drawn on the map
+- Process multiple points interactively or from vector files/layers
+- Save results as raster (GeoTIFF) or vector (GeoPackage, Shapefile) with optional regularization
 
-    Requires the geoai-py Python package and PyTorch with CUDA support for optimal performance.</about>
-        <version>0.2.0</version>
+Requires the geoai-py Python package and PyTorch with CUDA support for optimal performance.</about>
+        <version>0.3.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://opengeoai.org</homepage>
-        <file_name>geoai.zip</file_name>
+        <file_name>plugins/geoai.zip</file_name>
         <icon>icons/icon.png</icon>
         <author_name>Qiusheng Wu</author_name>
-        <download_url>https://qgis.gishub.org/geoai.zip</download_url>
+        <download_url>https://qgis.gishub.org/plugins/geoai.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
-        <experimental>True</experimental>
+        <experimental>False</experimental>
         <deprecated>False</deprecated>
         <tracker>https://github.com/opengeos/geoai/issues</tracker>
         <repository>https://github.com/opengeos/geoai</repository>
@@ -41,19 +41,19 @@
     <pyqgis_plugin name="HyperCoast" version="0.2.0">
         <description>Visualize and analyze hyperspectral data including EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, and Wyvern datasets</description>
         <about>HyperCoast QGIS Plugin provides powerful tools for hyperspectral data visualization and analysis. Features include:
-    - Load and display various hyperspectral formats (EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, Wyvern)
-    - Interactive band combination visualization
-    - Spectral signature inspection with click-to-plot functionality
-    - Export spectral profiles to CSV
-    - PCA analysis and visualization
-    - RGB composite creation with customizable wavelength selection</about>
+- Load and display various hyperspectral formats (EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, Wyvern)
+- Interactive band combination visualization
+- Spectral signature inspection with click-to-plot functionality
+- Export spectral profiles to CSV
+- PCA analysis and visualization
+- RGB composite creation with customizable wavelength selection</about>
         <version>0.2.0</version>
         <qgis_minimum_version>3.22</qgis_minimum_version>
         <homepage>https://hypercoast.org</homepage>
-        <file_name>hypercoast.zip</file_name>
+        <file_name>plugins/hypercoast.zip</file_name>
         <icon>icons/hypercoast.png</icon>
         <author_name>Qiusheng Wu</author_name>
-        <download_url>https://qgis.gishub.org/hypercoast.zip</download_url>
+        <download_url>https://qgis.gishub.org/plugins/hypercoast.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
         <experimental>True</experimental>
         <deprecated>False</deprecated>
@@ -63,22 +63,50 @@
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Plugin Template" version="0.1.0">
+        <description>A template for creating QGIS plugins with dockable panels, update checker, and about dialog.</description>
+        <about>This is a template plugin that demonstrates the structure and best practices for QGIS plugin development.
+
+Features:
+- Dockable panels that can be positioned anywhere in the QGIS interface
+- Plugin update checker that fetches the latest version from GitHub
+- About dialog with version information
+- Menu and toolbar integration
+- Clean, modular code structure following QGIS plugin guidelines
+
+Use this template as a starting point for your own QGIS plugins.</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-plugin-template</homepage>
+        <file_name>plugins/plugin_template.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/plugin_template.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-plugin-template/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-plugin-template</repository>
+        <tags>template, plugin, development, dockable, panels</tags>
+        <category>Plugins</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="SamGeo" version="1.1.0">
         <description>Segment remote sensing images using SAM (Segment Anything Model) with text, point, and box prompts.</description>
         <about>A QGIS plugin for remote sensing image segmentation powered by Meta's Segment Anything Model (SAM).
-    Features include:
-    - Text-based segmentation (describe what you want to segment)
-    - Interactive point prompts (click to segment objects)
-    - Box prompts (draw rectangles to segment regions)
-    - Save results as vector layers or GeoTIFF rasters
-    - Support for GeoTIFF and common image formats</about>
+Features include:
+- Text-based segmentation (describe what you want to segment)
+- Interactive point prompts (click to segment objects)
+- Box prompts (draw rectangles to segment regions)
+- Save results as vector layers or GeoTIFF rasters
+- Support for GeoTIFF and common image formats</about>
         <version>1.1.0</version>
         <qgis_minimum_version>3.22</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-samgeo-plugin</homepage>
-        <file_name>samgeo.zip</file_name>
+        <file_name>plugins/samgeo.zip</file_name>
         <icon>icons/icon.png</icon>
         <author_name>Qiusheng Wu</author_name>
-        <download_url>https://qgis.gishub.org/samgeo.zip</download_url>
+        <download_url>https://qgis.gishub.org/plugins/samgeo.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
         <experimental>True</experimental>
         <deprecated>False</deprecated>
@@ -87,5 +115,5 @@
         <tags>segmentation, sam, deep learning, remote sensing, geospatial, ai, machine learning</tags>
         <category>Raster</category>
     </pyqgis_plugin>
-</plugins>
 
+</plugins>
