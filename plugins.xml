@@ -147,4 +147,35 @@ Features include:
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Timelapse" version="0.1.0">
+        <description>Create timelapse animations from satellite and aerial imagery (NAIP, Landsat, Sentinel-2, Sentinel-1, GOES, and MODIS NDVI) using Google Earth Engine</description>
+        <about>A QGIS plugin for creating timelapse animations from remote sensing imagery using Google Earth Engine.
+
+Features:
+- NAIP timelapse: High-resolution aerial imagery (US only, 2003-present)
+- Landsat timelapse: Long-term satellite archive (1984-present)
+- Sentinel-2 timelapse: Multispectral satellite imagery (2015-present)
+- Sentinel-1 timelapse: SAR radar imagery (2014-present)
+- MODIS NDVI: Vegetation phenology animations
+- GOES: Weather satellite animations
+- Define area of interest by drawing on map or using vector layers
+- Customizable output settings (dimensions, FPS, text overlays)
+- GIF and MP4 output formats
+- Plugin update checker with automatic installation</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-timelapse-plugin</homepage>
+        <file_name>timelapse.zip</file_name>
+        <icon>icons/icon.png</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/timelapse.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-timelapse-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-timelapse-plugin</repository>
+        <tags>earth engine, timelapse, animation, satellite, sentinel, naip, landsat, modis, goes, remote sensing, gif</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
 </plugins>
