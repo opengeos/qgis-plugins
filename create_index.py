@@ -18,12 +18,19 @@ def parse_metadata(zip_path: str) -> dict:
             # Find metadata.txt in the zip
             for name in zf.namelist():
                 if name.endswith("metadata.txt"):
+                    # Get the modification time of metadata.txt from the zip
+                    info = zf.getinfo(name)
+                    # date_time is a tuple: (year, month, day, hour, minute, second)
+                    metadata_date = datetime(*info.date_time)
+
                     with zf.open(name) as f:
                         content = f.read().decode("utf-8")
                         config = configparser.ConfigParser()
                         config.read_string(content)
                         if "general" in config:
                             metadata = dict(config["general"])
+                            # Store the metadata.txt modification date
+                            metadata["_metadata_date"] = metadata_date
                     break
     except Exception as e:
         print(f"Error reading {zip_path}: {e}")
@@ -55,9 +62,16 @@ def generate_index_html(output_file: str = "index.html"):
                     # Store relative path from root for download links
                     metadata["filename"] = f"{PLUGINS_DIR}/{filename}"
                     metadata["filesize"] = get_file_size(zip_path)
-                    metadata["modified"] = datetime.fromtimestamp(
-                        os.path.getmtime(zip_path)
-                    ).strftime("%Y-%m-%d")
+                    # Use the metadata.txt modification date from inside the zip
+                    if "_metadata_date" in metadata:
+                        metadata["modified"] = metadata["_metadata_date"].strftime(
+                            "%Y-%m-%d"
+                        )
+                    else:
+                        # Fallback to zip file modification time
+                        metadata["modified"] = datetime.fromtimestamp(
+                            os.path.getmtime(zip_path)
+                        ).strftime("%Y-%m-%d")
                     plugins.append(metadata)
 
     # Generate plugin cards HTML
@@ -568,8 +582,12 @@ def generate_plugins_xml(output_file: str = "plugins.xml"):
                 zip_path = os.path.join(plugins_path, filename)
                 metadata = parse_metadata(zip_path)
                 if metadata:
-                    metadata["zip_filename"] = filename  # Just the filename for file_name tag
-                    metadata["zip_path"] = f"{PLUGINS_DIR}/{filename}"  # Full path for download_url
+                    metadata["zip_filename"] = (
+                        filename  # Just the filename for file_name tag
+                    )
+                    metadata["zip_path"] = (
+                        f"{PLUGINS_DIR}/{filename}"  # Full path for download_url
+                    )
                     plugins_data.append(metadata)
 
     # Generate XML content
