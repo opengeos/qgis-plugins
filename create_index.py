@@ -74,6 +74,9 @@ def generate_index_html(output_file: str = "index.html"):
                         ).strftime("%Y-%m-%d")
                     plugins.append(metadata)
 
+    # Sort plugins alphabetically by name (case-insensitive)
+    plugins.sort(key=lambda p: p.get("name", "").lower())
+
     # Generate plugin cards HTML
     plugin_cards = ""
     for p in plugins:
@@ -589,6 +592,9 @@ def generate_plugins_xml(output_file: str = "plugins.xml"):
                         f"{PLUGINS_DIR}/{filename}"  # Full path for download_url
                     )
                     plugins_data.append(metadata)
+
+    # Sort plugins alphabetically by name (case-insensitive)
+    plugins_data.sort(key=lambda p: p.get("name", "").lower())
 
     # Generate XML content
     xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n<plugins>\n'
