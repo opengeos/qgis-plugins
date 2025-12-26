@@ -91,6 +91,37 @@ Use this template as a starting point for your own QGIS plugins.</about>
         <category>Plugins</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Notebook" version="0.1.0">
+        <description>Render and run Jupyter notebooks within QGIS in a dockable panel.</description>
+        <about>QGIS Notebook allows you to open, render, and execute Jupyter notebooks directly within QGIS.
+
+Features:
+- Open and render Jupyter notebook (.ipynb) files
+- Execute notebook cells with Python kernel
+- View markdown and code cell outputs
+- Dockable panel that can be positioned anywhere in the QGIS interface
+- Syntax highlighting for code cells
+- Support for notebook outputs including text, images, and HTML
+- Integration with QGIS Python environment
+- Auto-save and export functionality
+
+Use this plugin to work with Jupyter notebooks without leaving QGIS.</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-notebook-plugin</homepage>
+        <file_name>qgis_notebook.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/qgis_notebook.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-notebook-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-notebook-plugin</repository>
+        <tags>jupyter, notebook, python, interactive, dockable, analysis</tags>
+        <category>Plugins</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="SamGeo" version="1.1.0">
         <description>Segment remote sensing images using SAM (Segment Anything Model) with text, point, and box prompts.</description>
         <about>A QGIS plugin for remote sensing image segmentation powered by Meta's Segment Anything Model (SAM).
