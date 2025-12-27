@@ -197,7 +197,7 @@ will select the appropriate WhiteboxTools algorithm and execute it for you.</abo
         <homepage>https://github.com/opengeos/qgis-whitebox-agent</homepage>
         <file_name>whitebox_agent.zip</file_name>
         <icon>icons/icon.svg</icon>
-        <author_name>Whitebox AI Agent Team</author_name>
+        <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/whitebox_agent.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
         <experimental>False</experimental>
