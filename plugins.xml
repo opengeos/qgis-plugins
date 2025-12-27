@@ -178,4 +178,34 @@ Features:
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Whitebox AI Agent" version="0.1.0">
+        <description>An AI-powered agent for running WhiteboxTools through natural language using Ollama/Claude/OpenAI/Gemini.</description>
+        <about>This plugin enables natural language interaction with WhiteboxTools processing algorithms.
+
+Features:
+- Chat-style interface for natural language queries
+- Automatic algorithm discovery from QGIS Processing registry
+- Multiple LLM backends: Ollama, Claude, OpenAI, Gemini
+- Smart parameter validation and layer detection
+- Automatic output loading to QGIS project
+- Safe, deterministic execution through QgsProcessing
+
+Simply describe what geospatial analysis you want to perform, and the AI agent
+will select the appropriate WhiteboxTools algorithm and execute it for you.</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-whitebox-agent</homepage>
+        <file_name>whitebox_agent.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Whitebox AI Agent Team</author_name>
+        <download_url>https://qgis.gishub.org/plugins/whitebox_agent.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>True</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-whitebox-agent/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-whitebox-agent</repository>
+        <tags>whitebox, whiteboxtools, ai, agent, llm, natural language, hydrology, terrain, geomorphometry</tags>
+        <category>Analysis</category>
+    </pyqgis_plugin>
+
 </plugins>
