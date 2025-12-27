@@ -139,6 +139,7 @@ def generate_index_html(output_file: str = "index.html"):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QGIS Plugin Repository | GeoAI Tools</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -214,8 +215,10 @@ def generate_index_html(output_file: str = "index.html"):
         }}
 
         .logo {{
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            display: block;
         }}
 
         h1 {{
@@ -511,7 +514,7 @@ def generate_index_html(output_file: str = "index.html"):
 </head>
 <body>
     <header>
-        <div class="logo">🌍</div>
+        <img src="logo.png" alt="QGIS Plugin Repository Logo" class="logo">
         <h1>QGIS Plugin Repository</h1>
         <p class="subtitle">AI-powered geospatial analysis tools for QGIS. Deep learning, hyperspectral analysis, and advanced segmentation.</p>
         <div class="repo-url">
