@@ -63,6 +63,36 @@ Requires the geoai-py Python package and PyTorch with CUDA support for optimal p
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Maxar Open Data" version="0.1.0">
+        <description>Browse and visualize Maxar Open Data satellite imagery for disaster events directly in QGIS.</description>
+        <about>This plugin provides access to the Maxar Open Data Program, which offers pre- and post-event high-resolution satellite imagery for emergency planning, risk assessment, monitoring of staging areas and emergency response, damage assessment, and recovery.
+
+Features:
+- Browse available disaster events with satellite imagery
+- View and filter imagery footprints on the map
+- Load and visualize Cloud Optimized GeoTIFFs (COG) directly
+- Filter imagery by date, cloud cover, platform, and more
+- Support for visual (RGB), multispectral, and panchromatic imagery
+- Automatic updates from GitHub
+
+Data Source: https://www.maxar.com/open-data
+GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-maxar-plugin</homepage>
+        <file_name>maxar_open_data.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/maxar_open_data.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-maxar-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-maxar-plugin</repository>
+        <tags>maxar, satellite, imagery, disaster, emergency, open data, cog, cloud optimized geotiff, stac</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Notebook" version="0.1.0">
         <description>Render and run Jupyter notebooks within QGIS in a dockable panel.</description>
         <about>QGIS Notebook allows you to open, render, and execute Jupyter notebooks directly within QGIS.
