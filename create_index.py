@@ -68,9 +68,13 @@ def extract_plugin_icon(zip_path: str, plugin_name: str) -> str:
                     print(f"✓ Extracted icon for {plugin_name}")
                     return f"{ICONS_DIR}/{icon_filename}"
                 # Look for any SVG/PNG file in icons directory that might be the main icon
-                elif "/icons/" in name and (name.endswith(".svg") or name.endswith(".png")):
+                elif "/icons/" in name and (
+                    name.endswith(".svg") or name.endswith(".png")
+                ):
                     # Skip common non-icon files
-                    if any(skip in name.lower() for skip in ["about", "settings", "logo"]):
+                    if any(
+                        skip in name.lower() for skip in ["about", "settings", "logo"]
+                    ):
                         continue
                     # Extract the first viable icon we find
                     extension = ".svg" if name.endswith(".svg") else ".png"
@@ -196,7 +200,9 @@ def generate_index_html(output_file: str = "index.html"):
         # Generate icon HTML if available
         icon_html = ""
         if p.get("icon_path"):
-            icon_html = f'<img src="{p["icon_path"]}" alt="{name} icon" class="plugin-icon">'
+            icon_html = (
+                f'<img src="{p["icon_path"]}" alt="{name} icon" class="plugin-icon">'
+            )
 
         plugin_cards += f"""
         <div class="plugin-card">
