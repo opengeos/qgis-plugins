@@ -80,6 +80,17 @@ Browse and visualize Maxar Open Data satellite imagery for disaster events:
 
 📦 [Download](https://qgis.gishub.org/plugins/maxar_open_data.zip) | 🏠 [Homepage](https://github.com/opengeos/qgis-maxar-plugin) | 🐛 [Issues](https://github.com/opengeos/qgis-maxar-plugin/issues)
 
+#### NASA Earthdata
+
+Search, visualize, and download NASA Earthdata products in QGIS:
+
+- Search and browse NASA Earthdata catalog
+- COG (Cloud Optimized GeoTIFF) visualization
+- Data footprint display on map
+- Direct integration with NASA Earthdata authentication
+
+📦 [Download](https://qgis.gishub.org/plugins/nasa_earthdata.zip) | 🏠 [Homepage](https://github.com/opengeos/qgis-nasa-earthdata-plugin) | 🐛 [Issues](https://github.com/opengeos/qgis-nasa-earthdata-plugin/issues)
+
 #### NASA OPERA
 
 Search and visualize NASA OPERA satellite data products:
