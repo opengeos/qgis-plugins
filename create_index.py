@@ -20,6 +20,7 @@ def extract_plugin_icon(zip_path: str, plugin_name: str) -> str:
     try:
         with ZipFile(zip_path, "r") as zf:
             # Find the icon file in the zip (both PNG and SVG)
+            # Priority order: icon.png/svg, then plugin_name.png/svg
             icon_candidates = [
                 (f"{plugin_name}/icons/icon.png", ".png"),
                 (f"{plugin_name}/icon.png", ".png"),
@@ -42,7 +43,9 @@ def extract_plugin_icon(zip_path: str, plugin_name: str) -> str:
                     print(f"✓ Extracted icon for {plugin_name}")
                     return f"{ICONS_DIR}/{icon_filename}"
 
-            # If no icon found, try to find any icon.png or icon.svg
+            # If no standard icon found, look for plugin-specific named icons
+            # For example: opera.svg for nasa_opera plugin
+            plugin_base_name = plugin_name.replace("_", "").replace("-", "")
             for name in zf.namelist():
                 if name.endswith("icon.png") or name.endswith("/icon.png"):
                     icon_filename = f"{plugin_name}.png"
@@ -63,6 +66,22 @@ def extract_plugin_icon(zip_path: str, plugin_name: str) -> str:
                             out_file.write(icon_file.read())
 
                     print(f"✓ Extracted icon for {plugin_name}")
+                    return f"{ICONS_DIR}/{icon_filename}"
+                # Look for any SVG/PNG file in icons directory that might be the main icon
+                elif "/icons/" in name and (name.endswith(".svg") or name.endswith(".png")):
+                    # Skip common non-icon files
+                    if any(skip in name.lower() for skip in ["about", "settings", "logo"]):
+                        continue
+                    # Extract the first viable icon we find
+                    extension = ".svg" if name.endswith(".svg") else ".png"
+                    icon_filename = f"{plugin_name}{extension}"
+                    output_path = os.path.join(ICONS_DIR, icon_filename)
+
+                    with zf.open(name) as icon_file:
+                        with open(output_path, "wb") as out_file:
+                            out_file.write(icon_file.read())
+
+                    print(f"✓ Extracted icon for {plugin_name} from {name}")
                     return f"{ICONS_DIR}/{icon_filename}"
 
     except Exception as e:
