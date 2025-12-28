@@ -98,6 +98,35 @@ Requires the geoai-py Python package and PyTorch with CUDA support for optimal p
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Leafmap" version="0.1.0">
+        <description>A QGIS plugin for interactive layer comparison with transparency control and swipe tools.</description>
+        <about>Leafmap is a QGIS plugin that provides powerful tools for layer visualization and comparison.
+
+Features:
+- Interactive layer transparency control with real-time preview
+- Swipe tool for comparing two layers side-by-side (similar to ipyleaflet split control)
+- Dockable panels that can be positioned anywhere in the QGIS interface
+- Plugin update checker that fetches the latest version from GitHub
+- Settings panel for configuring plugin options
+
+This plugin is inspired by the Python leafmap package and brings similar
+layer comparison capabilities to the QGIS desktop environment.</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-leafmap-plugin</homepage>
+        <file_name>qgis_leafmap.zip</file_name>
+        <icon>icons/logo.png</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/qgis_leafmap.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-leafmap-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-leafmap-plugin</repository>
+        <tags>leafmap, transparency, swipe, compare, layers, visualization, split, map</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Maxar Open Data" version="0.1.0">
         <description>Browse and visualize Maxar Open Data satellite imagery for disaster events directly in QGIS.</description>
         <about>This plugin provides access to the Maxar Open Data Program, which offers pre- and post-event high-resolution satellite imagery for emergency planning, risk assessment, monitoring of staging areas and emergency response, damage assessment, and recovery.
