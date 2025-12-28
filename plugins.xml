@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugins>
+    <pyqgis_plugin name="Geemap" version="0.1.0">
+        <description>A QGIS plugin that integrates geemap for working with Google Earth Engine data.</description>
+        <about>QGIS Geemap brings the power of geemap and Google Earth Engine to QGIS.
+
+Features:
+- Add Earth Engine Image and ImageCollection layers to QGIS
+- Add Earth Engine FeatureCollection layers as vector data
+- Use familiar geemap Map API within QGIS
+- Interactive map controls for center, zoom, and bounds
+- Full compatibility with existing geemap code
+
+This plugin allows you to use code like:
+
+import ee
+import geemap
+
+m = geemap.Map(center=(40, -100), zoom=4)
+dem = ee.Image("USGS/SRTMGL1_003")
+m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-geemap-plugin</homepage>
+        <file_name>qgis_geemap.zip</file_name>
+        <icon>icons/logo.png</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/qgis_geemap.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-geemap-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-geemap-plugin</repository>
+        <tags>earth engine, google, geemap, remote sensing, satellite, gis, gee</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="GeoAI" version="0.3.0">
         <description>GeoAI plugin for QGIS providing AI-powered geospatial analysis including Moondream vision-language model for image captioning, querying, object detection, and semantic segmentation model training and inference.</description>
         <about>This plugin provides AI-powered geospatial analysis tools:
