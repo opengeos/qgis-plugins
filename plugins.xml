@@ -93,6 +93,48 @@ GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="NASA OPERA" version="0.1.0">
+        <description>Search and visualize NASA OPERA (Observational Products for End-Users from Remote Sensing Analysis) satellite data products.</description>
+        <about>NASA OPERA Plugin for QGIS provides an intuitive interface for searching and visualizing
+NASA OPERA data products directly in QGIS.
+
+OPERA (Observational Products for End-Users from Remote Sensing Analysis) is a NASA project
+that provides analysis-ready data products derived from satellite observations.
+
+Available Datasets:
+- DSWX-HLS: Dynamic Surface Water Extent from Harmonized Landsat Sentinel-2
+- DSWX-S1: Dynamic Surface Water Extent from Sentinel-1
+- DIST-ALERT-HLS: Land Surface Disturbance Alert from HLS
+- DIST-ANN-HLS: Land Surface Disturbance Annual from HLS
+- RTC-S1: Radiometric Terrain Corrected SAR Backscatter from Sentinel-1
+- CSLC-S1: Coregistered Single-Look Complex from Sentinel-1
+
+Features:
+- Search OPERA products by location, date range, and dataset type
+- Display search result footprints as vector layers
+- Visualize OPERA raster data directly in QGIS
+- Automatic authentication with NASA Earthdata
+- Plugin update checker
+
+Requirements:
+- Python packages: earthaccess, geopandas, shapely, pandas
+- NASA Earthdata account (free registration at https://urs.earthdata.nasa.gov)</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-nasa-opera-plugin</homepage>
+        <file_name>nasa_opera.zip</file_name>
+        <icon>icons/opera.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/nasa_opera.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-nasa-opera-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-nasa-opera-plugin</repository>
+        <tags>nasa, opera, satellite, remote sensing, water, surface water, dswx, disturbance, sar, sentinel, landsat, hls, earthdata</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Notebook" version="0.1.0">
         <description>Render and run Jupyter notebooks within QGIS in a dockable panel.</description>
         <about>QGIS Notebook allows you to open, render, and execute Jupyter notebooks directly within QGIS.
