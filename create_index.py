@@ -5,9 +5,70 @@ import os
 import configparser
 from zipfile import ZipFile
 from datetime import datetime
+import shutil
 
 
 PLUGINS_DIR = "plugins"
+ICONS_DIR = "icons"
+
+
+def extract_plugin_icon(zip_path: str, plugin_name: str) -> str:
+    """Extract the plugin icon from the zip file and save it to the icons directory."""
+    # Create icons directory if it doesn't exist
+    os.makedirs(ICONS_DIR, exist_ok=True)
+
+    try:
+        with ZipFile(zip_path, "r") as zf:
+            # Find the icon file in the zip (both PNG and SVG)
+            icon_candidates = [
+                (f"{plugin_name}/icons/icon.png", ".png"),
+                (f"{plugin_name}/icon.png", ".png"),
+                (f"{plugin_name}/icons/{plugin_name}.png", ".png"),
+                (f"{plugin_name}/icons/icon.svg", ".svg"),
+                (f"{plugin_name}/icon.svg", ".svg"),
+                (f"{plugin_name}/icons/{plugin_name}.svg", ".svg"),
+            ]
+
+            for icon_path, extension in icon_candidates:
+                if icon_path in zf.namelist():
+                    # Extract icon to icons directory
+                    icon_filename = f"{plugin_name}{extension}"
+                    output_path = os.path.join(ICONS_DIR, icon_filename)
+
+                    with zf.open(icon_path) as icon_file:
+                        with open(output_path, "wb") as out_file:
+                            out_file.write(icon_file.read())
+
+                    print(f"✓ Extracted icon for {plugin_name}")
+                    return f"{ICONS_DIR}/{icon_filename}"
+
+            # If no icon found, try to find any icon.png or icon.svg
+            for name in zf.namelist():
+                if name.endswith("icon.png") or name.endswith("/icon.png"):
+                    icon_filename = f"{plugin_name}.png"
+                    output_path = os.path.join(ICONS_DIR, icon_filename)
+
+                    with zf.open(name) as icon_file:
+                        with open(output_path, "wb") as out_file:
+                            out_file.write(icon_file.read())
+
+                    print(f"✓ Extracted icon for {plugin_name}")
+                    return f"{ICONS_DIR}/{icon_filename}"
+                elif name.endswith("icon.svg") or name.endswith("/icon.svg"):
+                    icon_filename = f"{plugin_name}.svg"
+                    output_path = os.path.join(ICONS_DIR, icon_filename)
+
+                    with zf.open(name) as icon_file:
+                        with open(output_path, "wb") as out_file:
+                            out_file.write(icon_file.read())
+
+                    print(f"✓ Extracted icon for {plugin_name}")
+                    return f"{ICONS_DIR}/{icon_filename}"
+
+    except Exception as e:
+        print(f"⚠ Could not extract icon for {plugin_name}: {e}")
+
+    return None
 
 
 def parse_metadata(zip_path: str) -> dict:
@@ -59,6 +120,13 @@ def generate_index_html(output_file: str = "index.html"):
                 zip_path = os.path.join(plugins_path, filename)
                 metadata = parse_metadata(zip_path)
                 if metadata:
+                    # Get plugin name from filename (remove .zip extension)
+                    plugin_name = filename.replace(".zip", "")
+
+                    # Extract plugin icon
+                    icon_path = extract_plugin_icon(zip_path, plugin_name)
+                    metadata["icon_path"] = icon_path
+
                     # Store relative path from root for download links
                     metadata["filename"] = f"{PLUGINS_DIR}/{filename}"
                     metadata["filesize"] = get_file_size(zip_path)
@@ -106,10 +174,18 @@ def generate_index_html(output_file: str = "index.html"):
             else ""
         )
 
+        # Generate icon HTML if available
+        icon_html = ""
+        if p.get("icon_path"):
+            icon_html = f'<img src="{p["icon_path"]}" alt="{name} icon" class="plugin-icon">'
+
         plugin_cards += f"""
         <div class="plugin-card">
             <div class="plugin-header">
-                <h2>{name}</h2>
+                <div class="plugin-title-row">
+                    {icon_html}
+                    <h2>{name}</h2>
+                </div>
                 <div class="badges">
                     <span class="badge version">v{version}</span>
                     <span class="badge category">{category}</span>
@@ -351,6 +427,21 @@ def generate_index_html(output_file: str = "index.html"):
             margin-bottom: 1rem;
             flex-wrap: wrap;
             gap: 0.75rem;
+        }}
+
+        .plugin-title-row {{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }}
+
+        .plugin-icon {{
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: var(--bg-hover);
+            padding: 4px;
         }}
 
         .plugin-header h2 {{

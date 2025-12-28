@@ -27,21 +27,27 @@ jobs:
 
       #####################################################
       # Generate plugins.xml and index.html from plugin zip files
-      - name: Generate plugins.xml and index.html
+      - name: Generate plugins.xml, index.html, and extract icons
         run: |
           python create_index.py
-      - name: file_check
+      - name: Verify generated files
         run: |
+          echo "=== Root directory ==="
           ls -l -a
+          echo ""
+          echo "=== Plugins directory ==="
           ls -l plugins/
-      - name: commit files
+          echo ""
+          echo "=== Icons directory ==="
+          ls -l icons/ || echo "No icons directory found"
+      - name: Commit files
         continue-on-error: true
         run: |
           today=$(date +"%Y-%m-%d")
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "Updated plugins.xml and index.html ${today} UTC" -a
+          git commit -m "Updated plugins.xml, index.html, and icons ${today} UTC" -a
           git pull origin main
       - name: push changes
         continue-on-error: true
