@@ -12,14 +12,49 @@ PLUGINS_DIR = "plugins"
 ICONS_DIR = "icons"
 
 
-def extract_plugin_icon(zip_path: str, plugin_name: str) -> str:
-    """Extract the plugin icon from the zip file and save it to the icons directory."""
+def extract_plugin_icon(
+    zip_path: str, plugin_name: str, metadata_icon_path: str = None
+) -> str:
+    """Extract the plugin icon from the zip file and save it to the icons directory.
+
+    Args:
+        zip_path: Path to the plugin zip file
+        plugin_name: Name of the plugin
+        metadata_icon_path: Icon path specified in metadata.txt (optional)
+    """
     # Create icons directory if it doesn't exist
     os.makedirs(ICONS_DIR, exist_ok=True)
 
     try:
         with ZipFile(zip_path, "r") as zf:
-            # Find the icon file in the zip (both PNG and SVG)
+            # Priority 1: Try the icon path from metadata.txt first
+            if metadata_icon_path:
+                # The metadata icon path might be relative to the plugin directory
+                metadata_icon_candidates = [
+                    f"{plugin_name}/{metadata_icon_path}",  # Relative to plugin dir
+                    metadata_icon_path,  # Absolute path in zip
+                ]
+
+                for icon_path in metadata_icon_candidates:
+                    if icon_path in zf.namelist():
+                        # Determine extension from the file
+                        extension = os.path.splitext(icon_path)[1]
+                        if not extension:
+                            extension = ".png"  # Default to PNG if no extension
+
+                        icon_filename = f"{plugin_name}{extension}"
+                        output_path = os.path.join(ICONS_DIR, icon_filename)
+
+                        with zf.open(icon_path) as icon_file:
+                            with open(output_path, "wb") as out_file:
+                                out_file.write(icon_file.read())
+
+                        print(
+                            f"✓ Extracted icon for {plugin_name} from metadata path: {icon_path}"
+                        )
+                        return f"{ICONS_DIR}/{icon_filename}"
+
+            # Priority 2: Find the icon file using standard locations
             # Priority order: icon.png/svg, then plugin_name.png/svg
             icon_candidates = [
                 (f"{plugin_name}/icons/icon.png", ".png"),
@@ -146,8 +181,11 @@ def generate_index_html(output_file: str = "index.html"):
                     # Get plugin name from filename (remove .zip extension)
                     plugin_name = filename.replace(".zip", "")
 
-                    # Extract plugin icon
-                    icon_path = extract_plugin_icon(zip_path, plugin_name)
+                    # Extract plugin icon using the path from metadata.txt if available
+                    metadata_icon = metadata.get("icon", None)
+                    icon_path = extract_plugin_icon(
+                        zip_path, plugin_name, metadata_icon
+                    )
                     metadata["icon_path"] = icon_path
 
                     # Store relative path from root for download links
