@@ -157,6 +157,38 @@ GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="NASA Earthdata" version="0.1.0">
+        <description>Search, visualize, and download NASA Earthdata products in QGIS. Supports COG visualization and data footprint display.</description>
+        <about>NASA Earthdata Plugin for QGIS enables searching, visualizing, and downloading data from NASA's Earthdata catalog.
+
+Features:
+- Search NASA Earthdata catalog with keywords, bounding box, and temporal filters
+- Visualize Cloud Optimized GeoTIFFs (COG) directly in QGIS
+- Display data footprints on the map
+- Download non-COG data for local visualization
+- Support for multiple NASA data products including GEDI, MODIS, Landsat, and more
+- Earthdata Login integration for authenticated access
+- Settings panel for configuring credentials and preferences
+
+Requirements:
+- NASA Earthdata account (register at https://urs.earthdata.nasa.gov/)
+- Python packages: earthaccess, geopandas</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-nasa-earthdata-plugin</homepage>
+        <file_name>nasa_earthdata.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/nasa_earthdata.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-nasa-earthdata-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-nasa-earthdata-plugin</repository>
+        <tags>nasa, earthdata, satellite, remote sensing, COG, cloud optimized geotiff, download, visualization, GEDI, MODIS, Landsat</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="NASA OPERA" version="0.1.0">
         <description>Search and visualize NASA OPERA (Observational Products for End-Users from Remote Sensing Analysis) satellite data products.</description>
         <about>NASA OPERA Plugin for QGIS provides an intuitive interface for searching and visualizing
