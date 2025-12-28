@@ -254,7 +254,7 @@ Features include:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Timelapse" version="0.1.0">
+    <pyqgis_plugin name="Timelapse" version="0.2.0">
         <description>Create timelapse animations from satellite and aerial imagery (NAIP, Landsat, Sentinel-2, Sentinel-1, GOES, and MODIS NDVI) using Google Earth Engine</description>
         <about>A QGIS plugin for creating timelapse animations from remote sensing imagery using Google Earth Engine.
 
@@ -269,7 +269,7 @@ Features:
 - Customizable output settings (dimensions, FPS, text overlays)
 - GIF and MP4 output formats
 - Plugin update checker with automatic installation</about>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-timelapse-plugin</homepage>
         <file_name>timelapse.zip</file_name>
