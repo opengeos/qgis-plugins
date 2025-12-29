@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugins>
+    <pyqgis_plugin name="Earth Engine Data Catalogs" version="0.1.0">
+        <description>Browse, search, and load Google Earth Engine data catalogs directly in QGIS.</description>
+        <about>A comprehensive plugin for exploring and loading Google Earth Engine datasets in QGIS.
+
+Features:
+- Browse the complete GEE Data Catalog with categorized datasets
+- Search datasets by keywords, tags, and providers
+- Filter data by bounding box, date range, and cloud cover
+- Preview dataset metadata and visualization parameters
+- Load EE Image, ImageCollection, and FeatureCollection directly to QGIS
+- Integration with qgis-geemap-plugin for advanced functionality
+- Customizable visualization parameters
+- Support for temporal filtering on ImageCollections
+- Export capabilities for loaded datasets
+
+Use this plugin to efficiently discover and visualize Earth Engine data in QGIS.</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-gee-data-catalogs-plugin</homepage>
+        <file_name>gee_data_catalogs.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/gee_data_catalogs.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-gee-data-catalogs-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-gee-data-catalogs-plugin</repository>
+        <tags>earth engine, google, gee, remote sensing, satellite, imagery, geospatial, catalog, data</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Geemap" version="0.1.0">
         <description>A QGIS plugin that integrates geemap for working with Google Earth Engine data.</description>
         <about>QGIS Geemap brings the power of geemap and Google Earth Engine to QGIS.
