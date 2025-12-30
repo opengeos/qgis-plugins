@@ -8,7 +8,46 @@ A custom QGIS plugin repository for AI-powered geospatial analysis tools.
 https://qgis.gishub.org/plugins.xml
 ```
 
-## How to Add This Repository to QGIS
+## Quick Install
+
+Install all plugins with a single command:
+
+**Linux/macOS:**
+```bash
+curl -LsSf https://qgis.gishub.org/install.sh | sh
+```
+
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://qgis.gishub.org/install.ps1 | iex"
+```
+
+After installation, restart QGIS and enable the plugins from:
+**Plugins** → **Manage and Install Plugins** → **Installed**
+
+## Installation Methods
+
+### Method 1: One-Line Install (Recommended)
+
+See [Quick Install](#quick-install) above for single-command installation.
+
+### Method 2: Local Installation Scripts
+
+If you've cloned this repository, you can use the local installation scripts:
+
+**Using Python:**
+```bash
+python3 install_plugins.py
+```
+
+**Using Shell Script:**
+```bash
+./install_plugins.sh
+```
+
+For detailed installation instructions, troubleshooting, and updating plugins, see [INSTALL.md](INSTALL.md).
+
+### Method 3: Add This Repository to QGIS
 
 1. Open QGIS
 2. Go to **Plugins** → **Manage and Install Plugins**
