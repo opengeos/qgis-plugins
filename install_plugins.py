@@ -22,7 +22,10 @@ def get_qgis_plugins_dir():
     if system == "Linux":
         plugins_dir = home / ".local/share/QGIS/QGIS3/profiles/default/python/plugins"
     elif system == "Darwin":  # macOS
-        plugins_dir = home / "Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins"
+        plugins_dir = (
+            home
+            / "Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins"
+        )
     elif system == "Windows":
         appdata = os.getenv("APPDATA")
         if not appdata:
@@ -60,7 +63,7 @@ def install_plugin(zip_path, target_dir):
 
     try:
         # Extract the zip file
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        with zipfile.ZipFile(zip_path, "r") as zip_ref:
             zip_ref.extractall(temp_dir)
 
         # Find the plugin directory (should be the only subdirectory)
