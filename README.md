@@ -14,7 +14,7 @@ Install all plugins with a single command:
 
 **Linux/macOS:**
 ```bash
-curl -LsSf https://qgis.gishub.org/install.sh | sh
+curl -LsSf https://qgis.gishub.org/install.sh | bash
 ```
 
 **Windows (PowerShell):**

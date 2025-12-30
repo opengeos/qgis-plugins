@@ -2,10 +2,8 @@
 
 ###############################################################################
 # QGIS Plugins One-Line Installer
-# Usage: curl -LsSf https://qgis.gishub.org/install.sh | sh
+# Usage: curl -LsSf https://qgis.gishub.org/install.sh | bash
 ###############################################################################
-
-set -e
 
 # Colors for output
 RED='\033[0;31m'
@@ -55,7 +53,7 @@ install_plugin() {
 
     # Extract plugin
     mkdir -p "$temp_dir"
-    if ! unzip -q "$temp_zip" -d "$temp_dir" 2>/dev/null; then
+    if ! unzip -q "$temp_zip" -d "$temp_dir" < /dev/null 2>/dev/null; then
         print_error "  ✗ Failed to extract $plugin_name"
         rm -f "$temp_zip"
         rm -rf "$temp_dir"
@@ -63,7 +61,7 @@ install_plugin() {
     fi
 
     # Find plugin directory
-    local plugin_dir=$(find "$temp_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -n 1)
+    local plugin_dir=$(find "$temp_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -n 1 < /dev/null)
 
     if [ -n "$plugin_dir" ]; then
         local plugin_basename=$(basename "$plugin_dir")
@@ -132,9 +130,9 @@ main() {
 
     for plugin in "${PLUGINS[@]}"; do
         if install_plugin "$plugin" "$BASE_URL" "$QGIS_PLUGINS_DIR"; then
-            ((installed++))
+            installed=$((installed + 1))
         else
-            ((failed++))
+            failed=$((failed + 1))
         fi
     done
 
