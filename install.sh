@@ -61,24 +61,29 @@ install_plugin() {
     fi
 
     # Find plugin directory
-    local plugin_dir=$(find "$temp_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -n 1 < /dev/null)
+    local plugin_dir=$(find "$temp_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -n 1)
 
-    if [ -n "$plugin_dir" ]; then
-        local plugin_basename=$(basename "$plugin_dir")
-        local final_dir="$target_dir/$plugin_basename"
+    if [ -z "$plugin_dir" ]; then
+        print_error "  ✗ No plugin directory found in $plugin_name"
+        rm -f "$temp_zip"
+        rm -rf "$temp_dir"
+        return 1
+    fi
 
-        # Remove existing plugin
-        [ -d "$final_dir" ] && rm -rf "$final_dir"
+    local plugin_basename=$(basename "$plugin_dir")
+    local final_dir="$target_dir/$plugin_basename"
 
-        # Move plugin to final location
-        if mv "$plugin_dir" "$final_dir" 2>/dev/null; then
-            print_success "  ✓ $plugin_name installed"
-        else
-            print_error "  ✗ Failed to install $plugin_name"
-            rm -f "$temp_zip"
-            rm -rf "$temp_dir"
-            return 1
-        fi
+    # Remove existing plugin
+    [ -d "$final_dir" ] && rm -rf "$final_dir"
+
+    # Move plugin to final location
+    if mv "$plugin_dir" "$final_dir" 2>/dev/null; then
+        print_success "  ✓ $plugin_name installed"
+    else
+        print_error "  ✗ Failed to install $plugin_name"
+        rm -f "$temp_zip"
+        rm -rf "$temp_dir"
+        return 1
     fi
 
     # Cleanup
