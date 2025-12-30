@@ -4,14 +4,30 @@ This repository includes automated scripts to install all QGIS plugins at once.
 
 ## Quick Start
 
-### Python Script (Recommended)
+### One-Line Install (Recommended)
 
+Install all plugins with a single command - no need to clone the repository:
+
+**Linux/macOS:**
+```bash
+curl -LsSf https://qgis.gishub.org/install.sh | sh
+```
+
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://qgis.gishub.org/install.ps1 | iex"
+```
+
+### Local Installation Scripts
+
+If you've cloned this repository, you can use the local scripts:
+
+**Python Script:**
 ```bash
 python3 install_plugins.py
 ```
 
-### Shell Script
-
+**Shell Script:**
 ```bash
 ./install_plugins.sh
 ```
