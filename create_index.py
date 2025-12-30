@@ -676,7 +676,20 @@ def generate_index_html(output_file: str = "index.html"):
             <button class="copy-btn" onclick="copyUrl()">Copy URL</button>
         </div>
         <div class="instructions">
-            <h3>📋 How to Add This Repository</h3>
+            <h3>⚡ Quick Install (Recommended)</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Install all plugins with a single command:</p>
+            <div style="background: var(--bg-hover); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;">
+                <strong style="color: var(--accent-secondary); display: block; margin-bottom: 0.5rem;">Linux/macOS:</strong>
+                <code style="font-family: 'JetBrains Mono', monospace; color: var(--accent-primary); display: block; word-break: break-all;">curl -LsSf https://qgis.gishub.org/install.sh | bash</code>
+            </div>
+            <div style="background: var(--bg-hover); padding: 0.75rem; border-radius: 8px; margin-bottom: 0.75rem;">
+                <strong style="color: var(--accent-secondary); display: block; margin-bottom: 0.5rem;">Windows (PowerShell):</strong>
+                <code style="font-family: 'JetBrains Mono', monospace; color: var(--accent-primary); display: block; word-break: break-all;">powershell -ExecutionPolicy ByPass -c "irm https://qgis.gishub.org/install.ps1 | iex"</code>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.75rem;">After installation, restart QGIS and enable plugins from: <strong>Plugins → Manage and Install Plugins → Installed</strong></p>
+        </div>
+        <div class="instructions" style="margin-top: 1.5rem;">
+            <h3>📋 Or Add This Repository Manually</h3>
             <ol>
                 <li>Open QGIS → <strong>Plugins</strong> → <strong>Manage and Install Plugins</strong></li>
                 <li>Go to the <strong>Settings</strong> tab</li>
