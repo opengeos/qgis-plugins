@@ -173,9 +173,9 @@ main() {
 
     for zip_file in "${PLUGIN_ZIPS[@]}"; do
         if install_plugin "$zip_file" "$QGIS_PLUGINS_DIR"; then
-            ((installed++))
+            installed=$((installed + 1))
         else
-            ((failed++))
+            failed=$((failed + 1))
         fi
     done
 
