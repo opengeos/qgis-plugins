@@ -159,7 +159,7 @@ layer comparison capabilities to the QGIS desktop environment.</about>
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Maxar Open Data" version="0.1.0">
+    <pyqgis_plugin name="Maxar Open Data" version="0.2.0">
         <description>Browse and visualize Maxar Open Data satellite imagery for disaster events directly in QGIS.</description>
         <about>This plugin provides access to the Maxar Open Data Program, which offers pre- and post-event high-resolution satellite imagery for emergency planning, risk assessment, monitoring of staging areas and emergency response, damage assessment, and recovery.
 
@@ -169,11 +169,12 @@ Features:
 - Load and visualize Cloud Optimized GeoTIFFs (COG) directly
 - Filter imagery by date, cloud cover, platform, and more
 - Support for visual (RGB), multispectral, and panchromatic imagery
+- Download imagery for selected footprints
 - Automatic updates from GitHub
 
 Data Source: https://www.maxar.com/open-data
 GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-maxar-plugin</homepage>
         <file_name>maxar_open_data.zip</file_name>
