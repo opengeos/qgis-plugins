@@ -264,7 +264,7 @@ Requirements:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Notebook" version="0.3.1">
+    <pyqgis_plugin name="Notebook" version="0.4.0">
         <description>Render and run Jupyter notebooks within QGIS in a dockable panel.</description>
         <about>QGIS Notebook allows you to open, render, and execute Jupyter notebooks directly within QGIS.
 
@@ -279,7 +279,7 @@ Features:
 - Auto-save and export functionality
 
 Use this plugin to work with Jupyter notebooks without leaving QGIS.</about>
-        <version>0.3.1</version>
+        <version>0.4.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-notebook-plugin</homepage>
         <file_name>qgis_notebook.zip</file_name>
