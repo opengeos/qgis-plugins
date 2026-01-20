@@ -7,6 +7,7 @@ from zipfile import ZipFile
 from datetime import datetime
 import shutil
 
+
 PLUGINS_DIR = "plugins"
 ICONS_DIR = "icons"
 
