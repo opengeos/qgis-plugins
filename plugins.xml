@@ -67,7 +67,7 @@ m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")<
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="GeoAI" version="0.3.0">
+    <pyqgis_plugin name="GeoAI" version="0.4.0">
         <description>GeoAI plugin for QGIS providing AI-powered geospatial analysis including Moondream vision-language model for image captioning, querying, object detection, and semantic segmentation model training and inference.</description>
         <about>This plugin provides AI-powered geospatial analysis tools:
 
@@ -89,7 +89,7 @@ SamGeo segmentation:
 - Save results as raster (GeoTIFF) or vector (GeoPackage, Shapefile) with optional regularization
 
 Requires the geoai-py Python package and PyTorch with CUDA support for optimal performance.</about>
-        <version>0.3.0</version>
+        <version>0.4.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://opengeoai.org</homepage>
         <file_name>geoai.zip</file_name>
