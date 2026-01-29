@@ -190,7 +190,7 @@ GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="NASA Earthdata" version="0.2.1">
+    <pyqgis_plugin name="NASA Earthdata" version="0.3.0">
         <description>Search, visualize, and download NASA Earthdata products in QGIS. Supports COG visualization and data footprint display.</description>
         <about>NASA Earthdata Plugin for QGIS enables searching, visualizing, and downloading data from NASA's Earthdata catalog.
 
@@ -206,7 +206,7 @@ Features:
 Requirements:
 - NASA Earthdata account (register at https://urs.earthdata.nasa.gov/)
 - Python packages: earthaccess, geopandas</about>
-        <version>0.2.1</version>
+        <version>0.3.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-nasa-earthdata-plugin</homepage>
         <file_name>nasa_earthdata.zip</file_name>
