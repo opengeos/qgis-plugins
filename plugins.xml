@@ -348,6 +348,33 @@ Features include:
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Terrascope" version="0.1.0">
+        <description>Search and visualize Terrascope STAC API data with time slider and time series plotting.</description>
+        <about>Terrascope QGIS Plugin provides tools for searching, loading, and analyzing Earth observation data from the Terrascope STAC API.
+
+Features:
+- Search Terrascope STAC collections with spatial, temporal, and cloud cover filters
+- Load Cloud Optimized GeoTIFFs (COGs) directly into QGIS via /vsicurl/
+- Time slider for stepping through multi-temporal raster layers
+- Interactive time series plotting by clicking map locations
+- OAuth2 authentication with automatic token refresh
+- Export time series data to CSV and save plots as images</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-terrascope-plugin</homepage>
+        <file_name>terrascope.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/terrascope.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>True</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-terrascope-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-terrascope-plugin</repository>
+        <tags>terrascope, stac, remote sensing, time series, ndvi, sentinel, raster, cog</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Timelapse" version="0.5.0">
         <description>Create timelapse animations from satellite and aerial imagery (NAIP, Landsat, Sentinel-2, Sentinel-1, GOES, and MODIS NDVI) using Google Earth Engine</description>
         <about>A QGIS plugin for creating timelapse animations from remote sensing imagery using Google Earth Engine.
