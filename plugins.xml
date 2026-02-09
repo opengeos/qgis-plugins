@@ -367,7 +367,7 @@ Features:
         <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/terrascope.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
-        <experimental>True</experimental>
+        <experimental>false</experimental>
         <deprecated>False</deprecated>
         <tracker>https://github.com/opengeos/qgis-terrascope-plugin/issues</tracker>
         <repository>https://github.com/opengeos/qgis-terrascope-plugin</repository>
