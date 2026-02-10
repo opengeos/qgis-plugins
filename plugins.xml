@@ -348,6 +348,35 @@ Features include:
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="STAC Explorer" version="0.1.0">
+        <description>Search, visualize, and download data from multiple STAC catalogs</description>
+        <about>STAC Explorer is a QGIS plugin for searching, visualizing, and downloading
+data from multiple SpatioTemporal Asset Catalog (STAC) APIs. It supports
+pre-loaded catalogs (Element84 Earth Search, Microsoft Planetary Computer)
+and custom user-provided catalog URLs. Features include:
+- Multi-catalog switching with custom catalog support
+- Collection browsing and asset key inspection
+- Spatial, temporal, and cloud cover search filters
+- Direct COG streaming via /vsicurl/
+- Time slider for temporal layer navigation with auto-play
+- Time series plotting with matplotlib
+- Asset download to local files</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-stac-plugin</homepage>
+        <file_name>stac_explorer.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/stac_explorer.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-stac-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-stac-plugin</repository>
+        <tags>stac, remote sensing, satellite, raster, cog, sentinel, landsat, download</tags>
+        <category>Raster</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Terrascope" version="0.1.0">
         <description>Search and visualize Terrascope STAC API data with time slider and time series plotting.</description>
         <about>Terrascope QGIS Plugin provides tools for searching, loading, and analyzing Earth observation data from the Terrascope STAC API.
