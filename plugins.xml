@@ -377,7 +377,7 @@ and custom user-provided catalog URLs. Features include:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Terrascope" version="0.1.0">
+    <pyqgis_plugin name="Terrascope" version="0.2.0">
         <description>Search and visualize Terrascope STAC API data with time slider and time series plotting.</description>
         <about>Terrascope QGIS Plugin provides tools for searching, loading, and analyzing Earth observation data from the Terrascope STAC API.
 
@@ -388,7 +388,7 @@ Features:
 - Interactive time series plotting by clicking map locations
 - OAuth2 authentication with automatic token refresh
 - Export time series data to CSV and save plots as images</about>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-terrascope-plugin</homepage>
         <file_name>terrascope.zip</file_name>
