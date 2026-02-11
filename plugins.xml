@@ -392,7 +392,7 @@ Features:
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-terrascope-plugin</homepage>
         <file_name>terrascope.zip</file_name>
-        <icon>icons/icon.svg</icon>
+        <icon>icons/icon.png</icon>
         <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/terrascope.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
