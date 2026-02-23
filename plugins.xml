@@ -130,7 +130,7 @@ Requires the geoai-py Python package and PyTorch with CUDA support for optimal p
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Leafmap" version="0.3.0">
+    <pyqgis_plugin name="Leafmap" version="0.4.0">
         <description>A QGIS plugin for interactive layer comparison with transparency control and swipe tools.</description>
         <about>Leafmap is a QGIS plugin that provides powerful tools for layer visualization and comparison.
 
@@ -143,7 +143,7 @@ Features:
 
 This plugin is inspired by the Python leafmap package and brings similar
 layer comparison capabilities to the QGIS desktop environment.</about>
-        <version>0.3.0</version>
+        <version>0.4.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-leafmap-plugin</homepage>
         <file_name>qgis_leafmap.zip</file_name>
