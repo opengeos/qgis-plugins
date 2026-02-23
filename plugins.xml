@@ -222,7 +222,7 @@ Requirements:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="NASA OPERA" version="0.1.0">
+    <pyqgis_plugin name="NASA OPERA" version="0.3.0">
         <description>Search and visualize NASA OPERA (Observational Products for End-Users from Remote Sensing Analysis) satellite data products.</description>
         <about>NASA OPERA Plugin for QGIS provides an intuitive interface for searching and visualizing
 NASA OPERA data products directly in QGIS.
@@ -248,7 +248,7 @@ Features:
 Requirements:
 - Python packages: earthaccess, geopandas, shapely, pandas
 - NASA Earthdata account (free registration at https://urs.earthdata.nasa.gov)</about>
-        <version>0.1.0</version>
+        <version>0.3.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-nasa-opera-plugin</homepage>
         <file_name>nasa_opera.zip</file_name>
