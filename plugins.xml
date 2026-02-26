@@ -67,7 +67,7 @@ m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")<
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="GeoAI" version="1.0.1">
+    <pyqgis_plugin name="GeoAI" version="1.0.2">
         <description>GeoAI plugin for QGIS providing AI-powered geospatial analysis including Moondream vision-language model, semantic segmentation, instance segmentation (Mask R-CNN), SamGeo (SAM1/SAM2/SAM3), DeepForest object detection, and water segmentation (OmniWaterMask).</description>
         <about>This plugin provides AI-powered geospatial analysis tools:
 
@@ -105,7 +105,7 @@ Built-in Dependency Installer:
 - Automatic GPU detection (NVIDIA CUDA, Apple MPS)
 
 Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommended for optimal performance.</about>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://opengeoai.org</homepage>
         <file_name>geoai.zip</file_name>
