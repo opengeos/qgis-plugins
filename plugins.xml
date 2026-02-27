@@ -121,7 +121,7 @@ Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommende
         <category>Analysis</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="HyperCoast" version="0.4.0">
+    <pyqgis_plugin name="HyperCoast" version="0.5.0">
         <description>Visualize and analyze hyperspectral data including EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, and Wyvern datasets</description>
         <about>HyperCoast QGIS Plugin provides powerful tools for hyperspectral data visualization and analysis. Features include:
 - Load and display various hyperspectral formats (EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, Wyvern)
@@ -130,7 +130,7 @@ Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommende
 - Export spectral profiles to CSV
 - PCA analysis and visualization
 - RGB composite creation with customizable wavelength selection</about>
-        <version>0.4.0</version>
+        <version>0.5.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://hypercoast.org</homepage>
         <file_name>hypercoast.zip</file_name>
