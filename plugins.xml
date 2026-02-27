@@ -311,7 +311,7 @@ Use this plugin to work with Jupyter notebooks without leaving QGIS.</about>
         <category>Plugins</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Plugin Template" version="0.1.0">
+    <pyqgis_plugin name="Plugin Template" version="0.2.0">
         <description>A template for creating QGIS plugins with dockable panels, update checker, and about dialog.</description>
         <about>This is a template plugin that demonstrates the structure and best practices for QGIS plugin development.
 
@@ -320,22 +320,27 @@ Features:
 - Plugin update checker that fetches the latest version from GitHub
 - About dialog with version information
 - Menu and toolbar integration
+- One-click dependency installer using uv for fast cross-platform package management
+- Isolated virtual environment for Python dependencies
 - Clean, modular code structure following QGIS plugin guidelines
 
+Requirements:
+- Python packages: geopandas (installed automatically via Settings &gt; Dependencies)
+
 Use this template as a starting point for your own QGIS plugins.</about>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-plugin-template</homepage>
         <file_name>plugin_template.zip</file_name>
         <icon>icons/icon.svg</icon>
-        <author_name>Qiusheng Wu</author_name>
+        <author_name>Your Name</author_name>
         <download_url>https://qgis.gishub.org/plugins/plugin_template.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
         <experimental>False</experimental>
         <deprecated>False</deprecated>
         <tracker>https://github.com/opengeos/qgis-plugin-template/issues</tracker>
         <repository>https://github.com/opengeos/qgis-plugin-template</repository>
-        <tags>template, plugin, development, dockable, panels</tags>
+        <tags>template, plugin, development, dockable, panels, dependencies, uv</tags>
         <category>Plugins</category>
     </pyqgis_plugin>
 
