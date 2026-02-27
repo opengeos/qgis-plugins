@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugins>
-    <pyqgis_plugin name="Earth Engine Data Catalogs" version="0.8.0">
+    <pyqgis_plugin name="Earth Engine Data Catalogs" version="0.9.0">
         <description>Browse, search, and load Google Earth Engine data catalogs directly in QGIS.</description>
         <about>A comprehensive plugin for exploring and loading Google Earth Engine datasets in QGIS.
 
@@ -16,7 +16,7 @@ Features:
 - Export capabilities for loaded datasets
 
 Use this plugin to efficiently discover and visualize Earth Engine data in QGIS.</about>
-        <version>0.8.0</version>
+        <version>0.9.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-gee-data-catalogs-plugin</homepage>
         <file_name>gee_data_catalogs.zip</file_name>
