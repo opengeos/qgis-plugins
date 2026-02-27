@@ -32,7 +32,7 @@ Use this plugin to efficiently discover and visualize Earth Engine data in QGIS.
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Geemap" version="0.2.0">
+    <pyqgis_plugin name="Geemap" version="0.3.0">
         <description>A QGIS plugin that integrates geemap for working with Google Earth Engine data.</description>
         <about>QGIS Geemap brings the power of geemap and Google Earth Engine to QGIS.
 
@@ -51,7 +51,7 @@ import geemap
 m = geemap.Map(center=(40, -100), zoom=4)
 dem = ee.Image("USGS/SRTMGL1_003")
 m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")</about>
-        <version>0.2.0</version>
+        <version>0.3.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-geemap-plugin</homepage>
         <file_name>qgis_geemap.zip</file_name>
