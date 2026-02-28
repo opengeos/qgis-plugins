@@ -456,6 +456,37 @@ Features:
         <category>Raster</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Vantor" version="0.1.0">
+        <description>A QGIS plugin for searching, visualizing, and downloading data from the Vantor Open Data STAC catalog.</description>
+        <about>Browse and visualize satellite imagery from the Vantor Open Data Program.
+
+Features:
+- Browse disaster event collections from the Vantor STAC catalog
+- Search imagery by map extent or drawn bounding box
+- Filter by event and pre/post-event phase
+- Visualize Cloud-Optimized GeoTIFF (COG) imagery directly in QGIS
+- Download selected imagery to disk
+- Interactive footprint display with bidirectional table/map selection
+- One-click dependency installer using uv for fast cross-platform package management
+
+Requirements:
+- Python packages: pystac (installed automatically via Settings &gt; Dependencies)</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-vantor-plugin</homepage>
+        <file_name>vantor.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/vantor.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-vantor-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-vantor-plugin</repository>
+        <tags>stac, satellite, imagery, disaster, vantor, open data, COG, remote sensing</tags>
+        <category>Web</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Whitebox AI Agent" version="0.1.0">
         <description>An AI-powered agent for running WhiteboxTools through natural language using Ollama/Claude/OpenAI/Gemini.</description>
         <about>This plugin enables natural language interaction with WhiteboxTools processing algorithms.
