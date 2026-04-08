@@ -67,7 +67,7 @@ m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")<
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="GeoAI" version="1.0.7">
+    <pyqgis_plugin name="GeoAI" version="1.0.9">
         <description>GeoAI plugin for QGIS providing AI-powered geospatial analysis including tree segmentation (DeepForest), water segmentation (OmniWaterMask), Moondream vision-language model, Segment Anything (SAM1/SAM2/SAM3), semantic segmentation, and instance segmentation (Mask R-CNN).</description>
         <about>This plugin provides AI-powered geospatial analysis tools:
 
@@ -105,7 +105,7 @@ Instance Segmentation (Mask R-CNN):
 - Run inference on raster imagery with vectorized output
 
 Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommended for optimal performance.</about>
-        <version>1.0.7</version>
+        <version>1.0.9</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://opengeoai.org</homepage>
         <file_name>geoai.zip</file_name>
