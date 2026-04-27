@@ -540,7 +540,7 @@ Requirements:
         <category>Web</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Whitebox AI Agent" version="0.1.0">
+    <pyqgis_plugin name="Whitebox AI Agent" version="0.2.0">
         <description>An AI-powered agent for running WhiteboxTools through natural language using Ollama/Claude/OpenAI/Gemini.</description>
         <about>This plugin enables natural language interaction with WhiteboxTools processing algorithms.
 
@@ -554,7 +554,7 @@ Features:
 
 Simply describe what geospatial analysis you want to perform, and the AI agent
 will select the appropriate WhiteboxTools algorithm and execute it for you.</about>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-whitebox-agent</homepage>
         <file_name>whitebox_agent.zip</file_name>
