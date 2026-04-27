@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugins>
-    <pyqgis_plugin name="Earth Engine Data Catalogs" version="0.9.0">
+    <pyqgis_plugin name="CDSE Plugin" version="0.2.0">
+        <description>Search, visualize, and download satellite data from Copernicus Data Space Ecosystem (CDSE)</description>
+        <about>A QGIS plugin for accessing Copernicus Data Space Ecosystem (CDSE) satellite imagery. Features include:
+- Search Sentinel-1/2/3/5P/6, Copernicus DEM, and Landsat data
+- Support for both STAC and OData APIs
+- Interactive footprint visualization
+- Batch download capabilities
+- Cloud cover filtering for optical data</about>
+        <version>0.2.0</version>
+        <qgis_minimum_version>3.22</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-cdse-plugin</homepage>
+        <file_name>cdse_plugin.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/cdse_plugin.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>True</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-cdse-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-cdse-plugin</repository>
+        <tags>copernicus,sentinel,satellite,remote sensing,earth observation,stac,odata,download</tags>
+        <category>Web</category>
+    </pyqgis_plugin>
+
+    <pyqgis_plugin name="Earth Engine Data Catalogs" version="0.10.0">
         <description>Browse, search, and load Google Earth Engine data catalogs directly in QGIS.</description>
         <about>A comprehensive plugin for exploring and loading Google Earth Engine datasets in QGIS.
 
@@ -16,7 +40,7 @@ Features:
 - Export capabilities for loaded datasets
 
 Use this plugin to efficiently discover and visualize Earth Engine data in QGIS.</about>
-        <version>0.9.0</version>
+        <version>0.10.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-gee-data-catalogs-plugin</homepage>
         <file_name>gee_data_catalogs.zip</file_name>
@@ -32,7 +56,7 @@ Use this plugin to efficiently discover and visualize Earth Engine data in QGIS.
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Geemap" version="0.3.0">
+    <pyqgis_plugin name="Geemap" version="0.4.0">
         <description>A QGIS plugin that integrates geemap for working with Google Earth Engine data.</description>
         <about>QGIS Geemap brings the power of geemap and Google Earth Engine to QGIS.
 
@@ -51,7 +75,7 @@ import geemap
 m = geemap.Map(center=(40, -100), zoom=4)
 dem = ee.Image("USGS/SRTMGL1_003")
 m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")</about>
-        <version>0.3.0</version>
+        <version>0.4.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-geemap-plugin</homepage>
         <file_name>qgis_geemap.zip</file_name>
@@ -67,7 +91,7 @@ m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")<
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="GeoAI" version="1.1.0">
+    <pyqgis_plugin name="GeoAI" version="1.2.0">
         <description>GeoAI plugin for QGIS providing AI-powered geospatial analysis including tree segmentation (DeepForest), water segmentation (OmniWaterMask), Moondream vision-language model, Segment Anything (SAM1/SAM2/SAM3), semantic segmentation, and instance segmentation (Mask R-CNN).</description>
         <about>This plugin provides AI-powered geospatial analysis tools:
 
@@ -105,7 +129,7 @@ Instance Segmentation (Mask R-CNN):
 - Run inference on raster imagery with vectorized output
 
 Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommended for optimal performance.</about>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://opengeoai.org</homepage>
         <file_name>geoai.zip</file_name>
@@ -121,7 +145,7 @@ Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommende
         <category>Analysis</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="HyperCoast" version="0.5.0">
+    <pyqgis_plugin name="HyperCoast" version="0.7.0">
         <description>Visualize and analyze hyperspectral data including EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, and Wyvern datasets</description>
         <about>HyperCoast QGIS Plugin provides powerful tools for hyperspectral data visualization and analysis. Features include:
 - Load and display various hyperspectral formats (EMIT, PACE, DESIS, NEON, AVIRIS, PRISMA, EnMAP, Tanager, Wyvern)
@@ -130,7 +154,7 @@ Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommende
 - Export spectral profiles to CSV
 - PCA analysis and visualization
 - RGB composite creation with customizable wavelength selection</about>
-        <version>0.5.0</version>
+        <version>0.7.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://hypercoast.org</homepage>
         <file_name>hypercoast.zip</file_name>
@@ -146,7 +170,7 @@ Requires the geoai-py Python package and PyTorch. CUDA or MPS support recommende
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Leafmap" version="0.4.0">
+    <pyqgis_plugin name="Leafmap" version="0.5.0">
         <description>A QGIS plugin for interactive layer comparison with transparency control and swipe tools.</description>
         <about>Leafmap is a QGIS plugin that provides powerful tools for layer visualization and comparison.
 
@@ -159,7 +183,7 @@ Features:
 
 This plugin is inspired by the Python leafmap package and brings similar
 layer comparison capabilities to the QGIS desktop environment.</about>
-        <version>0.4.0</version>
+        <version>0.5.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-leafmap-plugin</homepage>
         <file_name>qgis_leafmap.zip</file_name>
@@ -175,7 +199,7 @@ layer comparison capabilities to the QGIS desktop environment.</about>
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Maxar Open Data" version="0.2.0">
+    <pyqgis_plugin name="Maxar Open Data" version="0.3.0">
         <description>Browse and visualize Maxar Open Data satellite imagery for disaster events directly in QGIS.</description>
         <about>This plugin provides access to the Maxar Open Data Program, which offers pre- and post-event high-resolution satellite imagery for emergency planning, risk assessment, monitoring of staging areas and emergency response, damage assessment, and recovery.
 
@@ -190,7 +214,7 @@ Features:
 
 Data Source: https://www.maxar.com/open-data
 GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
-        <version>0.2.0</version>
+        <version>0.3.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-maxar-plugin</homepage>
         <file_name>maxar_open_data.zip</file_name>
@@ -206,7 +230,7 @@ GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="NASA Earthdata" version="0.6.0">
+    <pyqgis_plugin name="NASA Earthdata" version="0.7.0">
         <description>Search, visualize, and download NASA Earthdata products in QGIS. Supports COG visualization and data footprint display.</description>
         <about>NASA Earthdata Plugin for QGIS enables searching, visualizing, and downloading data from NASA's Earthdata catalog.
 
@@ -222,7 +246,7 @@ Features:
 Requirements:
 - NASA Earthdata account (register at https://urs.earthdata.nasa.gov/)
 - Python packages: earthaccess, geopandas</about>
-        <version>0.6.0</version>
+        <version>0.7.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-nasa-earthdata-plugin</homepage>
         <file_name>nasa_earthdata.zip</file_name>
@@ -238,7 +262,7 @@ Requirements:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="NASA OPERA" version="0.6.0">
+    <pyqgis_plugin name="NASA OPERA" version="0.8.0">
         <description>Search and visualize NASA OPERA (Observational Products for End-Users from Remote Sensing Analysis) satellite data products.</description>
         <about>NASA OPERA Plugin for QGIS provides an intuitive interface for searching and visualizing
 NASA OPERA data products directly in QGIS.
@@ -264,7 +288,7 @@ Features:
 Requirements:
 - Python packages: earthaccess, geopandas, shapely, pandas
 - NASA Earthdata account (free registration at https://urs.earthdata.nasa.gov)</about>
-        <version>0.6.0</version>
+        <version>0.8.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-nasa-opera-plugin</homepage>
         <file_name>nasa_opera.zip</file_name>
@@ -311,7 +335,7 @@ Use this plugin to work with Jupyter notebooks without leaving QGIS.</about>
         <category>Plugins</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Plugin Template" version="0.2.0">
+    <pyqgis_plugin name="Plugin Template" version="0.3.0">
         <description>A template for creating QGIS plugins with dockable panels, update checker, and about dialog.</description>
         <about>This is a template plugin that demonstrates the structure and best practices for QGIS plugin development.
 
@@ -328,7 +352,7 @@ Requirements:
 - Python packages: geopandas (installed automatically via Settings &gt; Dependencies)
 
 Use this template as a starting point for your own QGIS plugins.</about>
-        <version>0.2.0</version>
+        <version>0.3.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-plugin-template</homepage>
         <file_name>plugin_template.zip</file_name>
@@ -344,7 +368,7 @@ Use this template as a starting point for your own QGIS plugins.</about>
         <category>Plugins</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="QGIS Terminal" version="0.1.0">
+    <pyqgis_plugin name="QGIS Terminal" version="0.2.0">
         <description>An integrated terminal for QGIS, similar to VS Code's integrated terminal.</description>
         <about>QGIS Terminal provides a dockable, integrated terminal panel within QGIS,
 similar to the integrated terminal in VS Code.
@@ -357,11 +381,11 @@ Features:
 - Configurable font, color scheme, and shell
 - Multiple shell support (bash, zsh, sh, PowerShell, cmd)
 - Terminal resize handling</about>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-terminal-plugin</homepage>
         <file_name>qgis_terminal.zip</file_name>
-        <icon>icons/terminal.svg</icon>
+        <icon>icons/icon.svg</icon>
         <author_name>Qiusheng Wu</author_name>
         <download_url>https://qgis.gishub.org/plugins/qgis_terminal.zip</download_url>
         <uploaded_by>giswqs</uploaded_by>
@@ -373,7 +397,7 @@ Features:
         <category>Plugins</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="SamGeo" version="1.3.0">
+    <pyqgis_plugin name="SamGeo" version="1.4.0">
         <description>Segment remote sensing images using SAM (Segment Anything Model) with text, point, and box prompts.</description>
         <about>A QGIS plugin for remote sensing image segmentation powered by Meta's Segment Anything Model (SAM).
 Features include:
@@ -382,7 +406,7 @@ Features include:
 - Box prompts (draw rectangles to segment regions)
 - Save results as vector layers or GeoTIFF rasters
 - Support for GeoTIFF and common image formats</about>
-        <version>1.3.0</version>
+        <version>1.4.0</version>
         <qgis_minimum_version>3.22</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-samgeo-plugin</homepage>
         <file_name>samgeo.zip</file_name>
@@ -427,7 +451,7 @@ and custom user-provided catalog URLs. Features include:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Terrascope" version="0.8.0">
+    <pyqgis_plugin name="Terrascope" version="0.9.0">
         <description>Search and visualize Terrascope STAC API data with time slider and time series plotting.</description>
         <about>Terrascope QGIS Plugin provides tools for searching, loading, and analyzing Earth observation data from the Terrascope STAC API.
 
@@ -438,7 +462,7 @@ Features:
 - Interactive time series plotting by clicking map locations
 - OAuth2 authentication with automatic token refresh
 - Export time series data to CSV and save plots as images</about>
-        <version>0.8.0</version>
+        <version>0.9.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-terrascope-plugin</homepage>
         <file_name>terrascope.zip</file_name>
@@ -454,7 +478,7 @@ Features:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Timelapse" version="0.8.0">
+    <pyqgis_plugin name="Timelapse" version="0.9.0">
         <description>Create timelapse animations from satellite and aerial imagery (NAIP, Landsat, Sentinel-2, Sentinel-1, GOES, and MODIS NDVI) using Google Earth Engine</description>
         <about>A QGIS plugin for creating timelapse animations from remote sensing imagery using Google Earth Engine.
 
@@ -469,7 +493,7 @@ Features:
 - Customizable output settings (dimensions, FPS, text overlays)
 - GIF and MP4 output formats
 - Plugin update checker with automatic installation</about>
-        <version>0.8.0</version>
+        <version>0.9.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-timelapse-plugin</homepage>
         <file_name>timelapse.zip</file_name>
@@ -485,7 +509,7 @@ Features:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Vantor" version="0.1.0">
+    <pyqgis_plugin name="Vantor" version="0.2.0">
         <description>A QGIS plugin for searching, visualizing, and downloading data from the Vantor Open Data STAC catalog.</description>
         <about>Browse and visualize satellite imagery from the Vantor Open Data Program.
 
@@ -500,7 +524,7 @@ Features:
 
 Requirements:
 - Python packages: pystac (installed automatically via Settings &gt; Dependencies)</about>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-vantor-plugin</homepage>
         <file_name>vantor.zip</file_name>
