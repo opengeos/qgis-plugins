@@ -335,6 +335,38 @@ Use this plugin to work with Jupyter notebooks without leaving QGIS.</about>
         <category>Plugins</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="OpenGeoAgent" version="0.1.0">
+        <description>GeoAgent-powered AI chatbot for QGIS projects.</description>
+        <about>OpenGeoAgent provides a dockable chatbot interface for QGIS that builds on GeoAgent's QGIS tool surface.
+
+Features:
+- Dockable chat panel for asking questions about the current QGIS project
+- QGIS-safe GeoAgent tools for layer inspection, map navigation, data loading, selection, processing, and project operations
+- Provider and model controls for Bedrock, OpenAI, ChatGPT/Codex OAuth, Anthropic, Google Gemini, Ollama, and LiteLLM
+- Sample prompts, prompt history with Up/Down, and Ctrl+Enter sending
+- Settings panel for API keys, hosts, model defaults, and dependency status
+- One-click dependency installer using uv with an isolated virtual environment
+- GitHub update checker
+- Local installation and packaging scripts
+
+Requirements:
+- GeoAgent and provider clients, installable from Settings &gt; Dependencies</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/GeoAgent</homepage>
+        <file_name>open_geoagent.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/open_geoagent.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/GeoAgent/issues</tracker>
+        <repository>https://github.com/opengeos/GeoAgent</repository>
+        <tags>ai, agent, qgis, geospatial, chatbot, geoagent, llm, gemini</tags>
+        <category>Plugins</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Plugin Template" version="0.3.0">
         <description>A template for creating QGIS plugins with dockable panels, update checker, and about dialog.</description>
         <about>This is a template plugin that demonstrates the structure and best practices for QGIS plugin development.
