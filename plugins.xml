@@ -56,7 +56,7 @@ Use this plugin to efficiently discover and visualize Earth Engine data in QGIS.
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Geemap" version="0.4.0">
+    <pyqgis_plugin name="Geemap" version="0.4.1">
         <description>A QGIS plugin that integrates geemap for working with Google Earth Engine data.</description>
         <about>QGIS Geemap brings the power of geemap and Google Earth Engine to QGIS.
 
@@ -75,7 +75,7 @@ import geemap
 m = geemap.Map(center=(40, -100), zoom=4)
 dem = ee.Image("USGS/SRTMGL1_003")
 m.add_layer(dem, {"min": 0, "max": 4000, "palette": ["green", "white"]}, "DEM")</about>
-        <version>0.4.0</version>
+        <version>0.4.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-geemap-plugin</homepage>
         <file_name>qgis_geemap.zip</file_name>
@@ -377,7 +377,7 @@ Requirements:
         <category>Plugins</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Plugin Template" version="0.3.0">
+    <pyqgis_plugin name="Plugin Template" version="0.3.1">
         <description>A template for creating QGIS plugins with dockable panels, update checker, and about dialog.</description>
         <about>This is a template plugin that demonstrates the structure and best practices for QGIS plugin development.
 
@@ -394,7 +394,7 @@ Requirements:
 - Python packages: geopandas (installed automatically via Settings &gt; Dependencies)
 
 Use this template as a starting point for your own QGIS plugins.</about>
-        <version>0.3.0</version>
+        <version>0.3.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-plugin-template</homepage>
         <file_name>plugin_template.zip</file_name>
@@ -410,7 +410,7 @@ Use this template as a starting point for your own QGIS plugins.</about>
         <category>Plugins</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="QGIS Terminal" version="0.2.0">
+    <pyqgis_plugin name="QGIS Terminal" version="0.2.1">
         <description>An integrated terminal for QGIS, similar to VS Code's integrated terminal.</description>
         <about>QGIS Terminal provides a dockable, integrated terminal panel within QGIS,
 similar to the integrated terminal in VS Code.
@@ -423,7 +423,7 @@ Features:
 - Configurable font, color scheme, and shell
 - Multiple shell support (bash, zsh, sh, PowerShell, cmd)
 - Terminal resize handling</about>
-        <version>0.2.0</version>
+        <version>0.2.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-terminal-plugin</homepage>
         <file_name>qgis_terminal.zip</file_name>
@@ -493,7 +493,7 @@ and custom user-provided catalog URLs. Features include:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Terrascope" version="0.9.0">
+    <pyqgis_plugin name="Terrascope" version="0.9.1">
         <description>Search and visualize Terrascope STAC API data with time slider and time series plotting.</description>
         <about>Terrascope QGIS Plugin provides tools for searching, loading, and analyzing Earth observation data from the Terrascope STAC API.
 
@@ -504,7 +504,7 @@ Features:
 - Interactive time series plotting by clicking map locations
 - OAuth2 authentication with automatic token refresh
 - Export time series data to CSV and save plots as images</about>
-        <version>0.9.0</version>
+        <version>0.9.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-terrascope-plugin</homepage>
         <file_name>terrascope.zip</file_name>
@@ -520,7 +520,7 @@ Features:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Timelapse" version="0.10.0">
+    <pyqgis_plugin name="Timelapse" version="0.10.1">
         <description>Create timelapse animations from satellite and aerial imagery (NAIP, Landsat, Sentinel-2, Sentinel-1, GOES, and MODIS NDVI) using Google Earth Engine</description>
         <about>A QGIS plugin for creating timelapse animations from remote sensing imagery using Google Earth Engine.
 
@@ -535,7 +535,7 @@ Features:
 - Customizable output settings (dimensions, FPS, text overlays)
 - GIF and MP4 output formats
 - Plugin update checker with automatic installation</about>
-        <version>0.10.0</version>
+        <version>0.10.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-timelapse-plugin</homepage>
         <file_name>timelapse.zip</file_name>
