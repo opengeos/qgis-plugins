@@ -24,7 +24,7 @@
         <category>Web</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Earth Engine Data Catalogs" version="0.10.0">
+    <pyqgis_plugin name="Earth Engine Data Catalogs" version="0.11.1">
         <description>Browse, search, and load Google Earth Engine data catalogs directly in QGIS.</description>
         <about>A comprehensive plugin for exploring and loading Google Earth Engine datasets in QGIS.
 
@@ -40,7 +40,7 @@ Features:
 - Export capabilities for loaded datasets
 
 Use this plugin to efficiently discover and visualize Earth Engine data in QGIS.</about>
-        <version>0.10.0</version>
+        <version>0.11.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-gee-data-catalogs-plugin</homepage>
         <file_name>gee_data_catalogs.zip</file_name>
@@ -230,7 +230,7 @@ GitHub Catalog: https://github.com/opengeos/maxar-open-data</about>
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="NASA Earthdata" version="0.7.0">
+    <pyqgis_plugin name="NASA Earthdata" version="0.7.1">
         <description>Search, visualize, and download NASA Earthdata products in QGIS. Supports COG visualization and data footprint display.</description>
         <about>NASA Earthdata Plugin for QGIS enables searching, visualizing, and downloading data from NASA's Earthdata catalog.
 
@@ -246,7 +246,7 @@ Features:
 Requirements:
 - NASA Earthdata account (register at https://urs.earthdata.nasa.gov/)
 - Python packages: earthaccess, geopandas</about>
-        <version>0.7.0</version>
+        <version>0.7.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-nasa-earthdata-plugin</homepage>
         <file_name>nasa_earthdata.zip</file_name>
@@ -520,7 +520,7 @@ Features:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Timelapse" version="0.9.0">
+    <pyqgis_plugin name="Timelapse" version="0.10.0">
         <description>Create timelapse animations from satellite and aerial imagery (NAIP, Landsat, Sentinel-2, Sentinel-1, GOES, and MODIS NDVI) using Google Earth Engine</description>
         <about>A QGIS plugin for creating timelapse animations from remote sensing imagery using Google Earth Engine.
 
@@ -535,7 +535,7 @@ Features:
 - Customizable output settings (dimensions, FPS, text overlays)
 - GIF and MP4 output formats
 - Plugin update checker with automatic installation</about>
-        <version>0.9.0</version>
+        <version>0.10.0</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-timelapse-plugin</homepage>
         <file_name>timelapse.zip</file_name>
@@ -551,7 +551,7 @@ Features:
         <category>Raster</category>
     </pyqgis_plugin>
 
-    <pyqgis_plugin name="Vantor" version="0.2.0">
+    <pyqgis_plugin name="Vantor" version="0.2.1">
         <description>A QGIS plugin for searching, visualizing, and downloading data from the Vantor Open Data STAC catalog.</description>
         <about>Browse and visualize satellite imagery from the Vantor Open Data Program.
 
@@ -566,7 +566,7 @@ Features:
 
 Requirements:
 - Python packages: pystac (installed automatically via Settings &gt; Dependencies)</about>
-        <version>0.2.0</version>
+        <version>0.2.1</version>
         <qgis_minimum_version>3.28</qgis_minimum_version>
         <homepage>https://github.com/opengeos/qgis-vantor-plugin</homepage>
         <file_name>vantor.zip</file_name>
