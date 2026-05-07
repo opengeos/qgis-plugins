@@ -582,6 +582,35 @@ Requirements:
         <category>Web</category>
     </pyqgis_plugin>
 
+    <pyqgis_plugin name="Wetland Mapper" version="0.1.0">
+        <description>Native QGIS tools for wetland mapping, data catalog presets, imagery browsing, and water occurrence analysis.</description>
+        <about>Wetland Mapper is a native QGIS plugin for wetland mapping and analysis.
+
+It ships with a Playa Wetlands example preset, but the plugin is designed
+for broader wetland mapping workflows. Users can load built-in data
+catalogs, add custom WMS/XYZ/PMTiles/local vector sources, browse NAIP
+imagery, inspect wetland-oriented attributes, and run JRC water occurrence
+statistics for map extents or selected features.
+
+Requirements:
+- QGIS/GDAL with PMTiles vector driver support for PMTiles catalog layers
+- matplotlib for chart PNG exports (installable from Settings)</about>
+        <version>0.1.0</version>
+        <qgis_minimum_version>3.28</qgis_minimum_version>
+        <homepage>https://github.com/opengeos/qgis-wetland-plugin</homepage>
+        <file_name>qgis_wetland.zip</file_name>
+        <icon>icons/icon.svg</icon>
+        <author_name>Qiusheng Wu</author_name>
+        <download_url>https://qgis.gishub.org/plugins/qgis_wetland.zip</download_url>
+        <uploaded_by>giswqs</uploaded_by>
+        <experimental>False</experimental>
+        <deprecated>False</deprecated>
+        <tracker>https://github.com/opengeos/qgis-wetland-plugin/issues</tracker>
+        <repository>https://github.com/opengeos/qgis-wetland-plugin</repository>
+        <tags>wetlands, wetland mapping, water occurrence, JRC, NAIP, PMTiles, NWI</tags>
+        <category>Plugins</category>
+    </pyqgis_plugin>
+
     <pyqgis_plugin name="Whitebox AI Agent" version="0.2.0">
         <description>An AI-powered agent for running WhiteboxTools through natural language using Ollama/Claude/OpenAI/Gemini.</description>
         <about>This plugin enables natural language interaction with WhiteboxTools processing algorithms.
